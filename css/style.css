@@ -365,3 +365,46 @@ body{
 .area-vise-weather-section .area-item h5{
   font-size: 1rem !important;
 }
+
+@media (max-width:768px) {
+  .home-midle-section {
+    flex-wrap: wrap;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.area-vise-weather-section {
+  flex-wrap: wrap;
+  grid-gap: 10px;
+}
+
+.home-midle-section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.search-bar-wrapper, .current-weather-outer, .recent-weather-outer, .weather-summary-section .left-content, 
+.weather-summary-section .right-content {
+  width: 100%;
+}
+
+.weather-summary-section {
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.highlight-wrapper {
+  height: max-content;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+      "a b"
+      "c d"
+      "e e";
+}
+
+.recent-item {
+  text-align: center;
+}
+
+}
