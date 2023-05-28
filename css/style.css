@@ -117,6 +117,14 @@ body{
     box-shadow:0 0 10px;
   }
 
+  .drawer-search-bar{
+    width: 100% !important;
+  }
+
+  .drawer-search-bar input{
+    width: 80%;
+  }
+
   .home-top-section{
     display: flex;
     justify-content: space-between;
@@ -142,7 +150,7 @@ body{
     font-weight: 400;
     line-height: 1.5;
     color: var(--bs-body-color);
-    background-color: #D9D9D9;
+    background-color: #E4FDE1;
     background-clip: padding-box;
     border: var(--bs-border-width) solid var(--bs-border-color);
     -webkit-appearance: none;
@@ -158,6 +166,10 @@ body{
     outline: none;
     background-color: transparent;
 
+  }
+
+  .home-midle-section .search-bar-wrapper input{
+    width: 100%;
   }
 
   .search-btn{
@@ -188,7 +200,7 @@ body{
   }
 
   .recent-item{
-    background-color: #d8d8d8;
+    background-color: #E4FDE1;
     flex: 1;
     border-radius: 10px;
     padding: 5px 15px;
@@ -198,7 +210,7 @@ body{
   }
 
   .recent-item:hover, .recent-item:active, .recent-item:focus{
-    background-color: #99a19b;
+    background-color: #EEF4ED;
   }
 
   .recent-item-detail{
@@ -229,12 +241,8 @@ body{
     width: 50px;
   }
 
-  .image-wrapper-humidity{
-    width: 25px;
-  }
-
   .recent-item .image-wrapper-thermometer {
-    width: 20px;
+    width: 50px;
   }
   .recent-item .image-wrapper img, .recent-item .image-wrapper-thermometer img, .image-wrapper-humidity img{
     width: 100%;
@@ -323,6 +331,7 @@ body{
 
   .recent-item .title{
     font-weight: 600 !important;
+    font-size: 12px;
   }
   
   .week-wrapper {
@@ -347,7 +356,7 @@ body{
 }
 
 .area-vise-weather-section{
-  background-color: #416176;
+  background-color: #028090;
     border-radius: 10px;
     color: white;
     padding: 1rem;
