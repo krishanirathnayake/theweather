@@ -10,6 +10,8 @@
  
     <script src="https://kit.fontawesome.com/abf5f31a10.js" crossorigin="anonymous"></script>
 
+    <script src="./lib/code.jquery.com_jquery-3.7.0.min.js" ></script>
+
 </head>
   <body>
 
@@ -17,45 +19,49 @@
         <div class="logo-wrapper">
             <img src="./images/logo.png" alt="" class="logo">
         </div>
-        <div>
-            <ul class="drawer-items">
-                <div class="search-bar-wrapper drawer-search-bar">
-                    <form class="d-flex" role="search">
-                        <input class="" type="search" placeholder="Search Location" aria-label="Search">
-                        <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </form>
-                </div>        
-                <li> <a href=""> Today </a> </li>
-                <li><a href=""> Tomorrow </a></li>
-                <li><a href=""> Last 7 Days </a></li>
-            </ul>
-            <main>
-                <aside class="drawer">
-                    <div class="ham">
-                        <div class="line upper-line"></div>
-                        <div class="line center-line"></div>
-                        <div class="line lower-line"></div>
-                    </div>
-                </aside>
-            </main>        
+        <div class="top-section-right-content">
+            <div>
+                <button class="change-unit-button" ><img src="./images/fahrenheit.png" alt=""></button>
+            </div>
+            <div>
+                <ul class="drawer-items">
+                    <div class="search-bar-wrapper drawer-search-bar">
+                        <form class="d-flex" role="search">
+                            <input class="" type="search" placeholder="Search Location" aria-label="Search">
+                            <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </form>
+                    </div>        
+                    <li> <a href=""> Today </a> </li>
+                    <li><a href=""> Tomorrow </a></li>
+                    <li><a href=""> Last 7 Days </a></li>
+                </ul>
+                <main>
+                    <aside class="drawer">
+                        <div class="ham">
+                            <div class="line upper-line"></div>
+                            <div class="line center-line"></div>
+                            <div class="line lower-line"></div>
+                        </div>
+                    </aside>
+                </main>        
+            </div>
         </div>
     </div>
 
     <div class="container home-midle-section">
         <div class="search-bar-wrapper">
-            <form class="d-flex" role="search">
-                <input class="" type="search" placeholder="Search Location" aria-label="Search">
-                <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
+            <input id="search_bar" class="" type="text" placeholder="Search Location">
+            <button id="btn" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
         <div class="current-weather-outer">
             <div class="current-weather-inner">
                 <img class="cloud1" src="./images/icons8-sun-behind-rain-cloud-96.png" alt="">
                 <div>
-                    <h4>23 <sup> 0</sup>C</h4>
-                    <p>Monday, 12.30 PM </p>
-                    <p>Mostly Cloudy </p>
-                    <p> Colombo, Sri Lanka </p>
+                    <span class ="current_temp"> </span> <span> &deg;c  </span> 
+                    <p class ="current_date"> </p>
+                    <p class ="current-condition"> </p>
+                    <span class ="current-location">  </span> <span class="region">  </span>
+                    <p class ="country"></p>
                 </div>
             </div>
         </div>
@@ -69,7 +75,7 @@
                             <div class="image-wrapper">
                                 <img src="./images/icons8-cloud-96.png" alt="">
                             </div>
-                            <h4>23 <sup>0</sup>C</h4>
+                            <h4 class ="current_temp" > <span> &deg;c  </span>  </h4>  
                             <h5>Colombo</h5>
                         </div>
                     </a>
@@ -99,14 +105,14 @@
                         <div class="image-wrapper">
                             <img src="./images/icons8-cloud-96.png" alt="">
                         </div>
-                        <h6>Mostly Cloudy </h6>
+                        <h6 class ="current-condition"></h6>
                     </div>
                 </a>
                 <a href="" class="recent-item grid-item-2">
                     <p class="title"> Temparature </p>
                     <div class="recent-item-detail2">
                         <div class="image-sec">
-                            <h4>23 <sup>0</sup>C</h4>
+                            <span class ="current_temp" >   </span>   <span> &deg;c  </span>
                             <div class="image-wrapper-thermometer">
                                 <img src="./images/icons8-thermometer-96.png" alt="">
                             </div>
@@ -118,7 +124,7 @@
                     <p class="title"> Wind Speed </p>
                     <div class="recent-item-detail2">
                         <div class="image-sec">
-                            <h4>5.77 km/h</h4>
+                            <h4 class="wind_speed"> </h4>
                             <div class="image-wrapper">
                                 <img src="./images/icons8-wind-96.png" alt="">
                             </div>
@@ -130,7 +136,7 @@
                     <p class="title"> Humidity </p>
                     <div class="recent-item-detail2">
                         <div class="image-sec">
-                            <h4>12 %</h4>
+                            <h4 class="humidity"> </h4>
                             <div class="image-wrapper">
                                 <img src="./images/icons8-humidity-96.png" alt="">
                             </div>
@@ -150,12 +156,13 @@
             <h4 class="main-title"> Week </h4>
             <div class="week-wrapper">
                 <a href="" class="recent-item grid-item-1">
-                    <p class="title"> Sun  </p>
+                    <p class="title day"> Sun  </p>
                     <div class="recent-item-detail">
                         <div class="week-image-wrapper">
                             <img src="./images/Sun-PNG-Clipart.png" alt="">
                         </div>
-                        <h6>23 <sup>0</sup>C</h6>
+                        <span class ="current_temp" ></span> <span> &deg;c  </span>
+                        <span class="current-condition"></span>
                     </div>
                 </a>
                 <a href="" class="recent-item grid-item-2">
