@@ -57,7 +57,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
     longi = position.coords.longitude;
 
     fetch(
-        `http://api.weatherapi.com/v1/current.json?key=5e833f2d0f864fafbd8174405230406&q=${lat}, ${longi}`,
+        `https://api.weatherapi.com/v1/current.json?key=5e833f2d0f864fafbd8174405230406&q=${lat}, ${longi}`,
         {
             method: "GET",
             mode: "cors"
@@ -77,7 +77,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
     })
 
     fetch(
-        `http://api.weatherapi.com/v1/history.json?key=5e833f2d0f864fafbd8174405230406&q=${lat}, ${longi}&dt=${previousDates[1]}`,
+        `https://api.weatherapi.com/v1/history.json?key=5e833f2d0f864fafbd8174405230406&q=${lat}, ${longi}&dt=${previousDates[1]}`,
         {
             method: "GET",
             mode: "cors"
@@ -98,7 +98,7 @@ btn.click(function () {
     let searchedLocation = textField.val();
 
     fetch(
-        `http://api.weatherapi.com/v1/current.json?key=5e833f2d0f864fafbd8174405230406&q=${searchedLocation}`,
+        `https://api.weatherapi.com/v1/current.json?key=5e833f2d0f864fafbd8174405230406&q=${searchedLocation}`,
         {
             method: "GET",
             mode: "cors"
@@ -126,7 +126,7 @@ btn.click(function () {
     // get history
 
     fetch(
-        `http://api.weatherapi.com/v1/history.json?key=5e833f2d0f864fafbd8174405230406&q=${searchedLocation}&dt=${previousDates[0]}`,
+        `https://api.weatherapi.com/v1/history.json?key=5e833f2d0f864fafbd8174405230406&q=${searchedLocation}&dt=${previousDates[0]}`,
         {
             method: "GET",
             mode: "cors"
