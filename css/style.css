@@ -362,6 +362,7 @@ body{
         "a b c"
         "d e e";
     height: 24rem;
+    height: max-content;
 }
 
 .week-image-wrapper{
@@ -372,6 +373,9 @@ body{
   width: 100%;
 }
 
+/* .week-current-temp{
+  
+} */
 .area-vise-weather-section{
   background-color: #028090;
     border-radius: 10px;

@@ -22,7 +22,13 @@ let longi = null;
 const windSpeed = $(".wind_speed");
 const humidity = $(".humidity");
 const dayInWord = $(".day");
-
+const day1 = $(".day1");
+const day2 = $(".day2");
+const day3 = $(".day3");
+const day4 = $(".day4");
+const day5 = $(".day5");
+const day6 = $(".day6");
+const day7 = $(".day7");
 
 var currentDate = new Date();
 var previousDates = [];
@@ -36,7 +42,7 @@ for (var i = 1; i <= 7; i++) {
     previousDates.push(formattedDate);
 }
 
-// console.log(previousDates[4]);
+console.log(previousDates);
 
 
 function getDayOfWeek(dateString) {
@@ -77,7 +83,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
     })
 
     fetch(
-        `https://api.weatherapi.com/v1/history.json?key=5e833f2d0f864fafbd8174405230406&q=${lat}, ${longi}&dt=${previousDates[1]}`,
+        `http://api.weatherapi.com/v1/history.json?key=5e833f2d0f864fafbd8174405230406&q=${lat}, ${longi}&dt=${previousDates[6]}&end_dt=${previousDates[0]}`,
         {
             method: "GET",
             mode: "cors"
@@ -85,10 +91,49 @@ navigator.geolocation.getCurrentPosition(function (position) {
     ).then(response => {
         return response.json();
     }).then(data => {
+        console.log("Krish");
         console.log(data);
-        temp.text(data.forecast.forecastday[0].day.avgtemp_c);
-        condition.text(data.forecast.forecastday[0].day.condition.text);
-        dayInWord.text(getDayOfWeek(previousDates[1]));
+
+
+        day1.find('.current_temp').text(data.forecast.forecastday[0].day.avgtemp_c);
+        day1.find('.current-condition').text(data.forecast.forecastday[0].day.condition.text);
+        day1.find('.day').text(getDayOfWeek(previousDates[0]));
+
+        day2.find('.current_temp').text(data.forecast.forecastday[1].day.avgtemp_c);
+        day2.find('.current-condition').text(data.forecast.forecastday[0].day.condition.text);
+        day2.find('.day').text(getDayOfWeek(previousDates[1]));
+
+        day3.find('.current_temp').text(data.forecast.forecastday[2].day.avgtemp_c);
+        day3.find('.current-condition').text(data.forecast.forecastday[0].day.condition.text);
+        day3.find('.day').text(getDayOfWeek(previousDates[2]));
+
+        day4.find('.current_temp').text(data.forecast.forecastday[3].day.avgtemp_c);
+        day4.find('.current-condition').text(data.forecast.forecastday[0].day.condition.text);
+        day4.find('.day').text(getDayOfWeek(previousDates[3]));
+
+        day5.find('.current_temp').text(data.forecast.forecastday[4].day.avgtemp_c);
+        day5.find('.current-condition').text(data.forecast.forecastday[0].day.condition.text);
+        day5.find('.day').text(getDayOfWeek(previousDates[4]));
+
+        day6.find('.current_temp').text(data.forecast.forecastday[5].day.avgtemp_c);
+        day6.find('.current-condition').text(data.forecast.forecastday[0].day.condition.text);
+        day6.find('.day').text(getDayOfWeek(previousDates[5]));
+
+        day7.find('.current_temp').text(data.forecast.forecastday[6].day.avgtemp_c);
+        day7.find('.current-condition').text(data.forecast.forecastday[0].day.condition.text);
+        day7.find('.day').text(getDayOfWeek(previousDates[6]));
+
+
+        // day2.find('.current_temp').text(data.forecast.forecastday[1].day.avgtemp_c);
+        // day3.find('.current_temp').text(data.forecast.forecastday[3].day.avgtemp_c);
+        // day4.find('.current_temp').text(data.forecast.forecastday[4].day.avgtemp_c);
+        // day5.find('.current_temp').text(data.forecast.forecastday[5].day.avgtemp_c);
+        // day6.find('.current_temp').text(data.forecast.forecastday[6].day.avgtemp_c);
+        // day7.find('.current_temp').text(data.forecast.forecastday[7].day.avgtemp_c);
+
+        //day1.temp.text(data.forecast.forecastday[0].day.avgtemp_c);
+        //day1.condition.text(data.forecast.forecastday[0].day.condition.text);
+        //day1.dayInWord.text(getDayOfWeek(previousDates[1]));
     })
 
 })
