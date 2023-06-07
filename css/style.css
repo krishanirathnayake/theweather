@@ -406,7 +406,6 @@ body{
 .area-vise-weather-section .area-item h5{
   font-size: 1rem !important;
 }
-
 .current-condition{
   font-size: 14px;
 }
@@ -447,7 +446,6 @@ body{
       "c d"
       "e e";
 }
-
 .recent-item {
   text-align: center;
 }
