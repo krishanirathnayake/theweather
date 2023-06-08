@@ -63,7 +63,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
     longi = position.coords.longitude;
 
     fetch(
-        `https://api.weatherapi.com/v1/current.json?key=5e833f2d0f864fafbd8174405230406&q=${lat}, ${longi}`,
+        `https://api.weatherapi.com/v1/current.json?key=164d900e7674490187a175906230706&q=${lat}, ${longi}`,
         {
             method: "GET",
             mode: "cors"
@@ -83,7 +83,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
     })
 
     fetch(
-        `http://api.weatherapi.com/v1/history.json?key=5e833f2d0f864fafbd8174405230406&q=${lat}, ${longi}&dt=${previousDates[6]}&end_dt=${previousDates[0]}`,
+        `https://api.weatherapi.com/v1/history.json?key=164d900e7674490187a175906230706&q=${lat}, ${longi}&dt=${previousDates[6]}&end_dt=${previousDates[0]}`,
         {
             method: "GET",
             mode: "cors"
@@ -131,7 +131,7 @@ btn.click(function () {
     let searchedLocation = textField.val();
 
     fetch(
-        `https://api.weatherapi.com/v1/current.json?key=5e833f2d0f864fafbd8174405230406&q=${searchedLocation}`,
+        `https://api.weatherapi.com/v1/current.json?key=164d900e7674490187a175906230706&q=${searchedLocation}`,
         {
             method: "GET",
             mode: "cors"
@@ -152,7 +152,7 @@ btn.click(function () {
     })
 
     fetch(
-        `http://api.weatherapi.com/v1/history.json?key=5e833f2d0f864fafbd8174405230406&q=${searchedLocation}&dt=${previousDates[6]}&end_dt=${previousDates[0]}`,
+        `https://api.weatherapi.com/v1/history.json?key=164d900e7674490187a175906230706&q=${searchedLocation}&dt=${previousDates[6]}&end_dt=${previousDates[0]}`,
         {
             method: "GET",
             mode: "cors"
@@ -199,10 +199,11 @@ btn.click(function () {
 
     let searchedLocation = textField.val();
 
+    let keyVar = "164d900e7674490187a175906230706";
     // get history
 
     fetch(
-        `https://api.weatherapi.com/v1/history.json?key=5e833f2d0f864fafbd8174405230406&q=${searchedLocation}&dt=${previousDates[0]}`,
+        `https://api.weatherapi.com/v1/history.json?key=${keyVar}&q=${searchedLocation}&dt=${previousDates[0]}`,
         {
             method: "GET",
             mode: "cors"
